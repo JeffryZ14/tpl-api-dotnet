@@ -1,5 +1,7 @@
 # CleanTemplate API
 
+> **Estado: retirado / histórico.** Este template ya no se mantiene como base activa para nuevos proyectos. Se conserva como referencia arquitectónica y de implementación. Para un servicio nuevo, conviene crear un scaffold actualizado y reutilizar solo las decisiones que sigan vigentes.
+
 Template de API en .NET 8 con Clean Architecture y CQRS (MediatR), pensado como base para nuevos servicios. Incluye un caso de ejemplo (`Product`) que cubre creación, consulta, actualización de precio y desactivación.
 
 ## Stack
@@ -91,8 +93,8 @@ Los errores de negocio/validación se devuelven como `ProblemDetails` (`ErrorOr`
 
 - `DatabaseSettings`: datos de conexión a Postgres.
 - `IpRateLimitOptions`: límite global de requests (AspNetCoreRateLimit).
-- `ApiSettings.ApiKey`: usada por `ApiKeyMiddleware` (actualmente deshabilitado en `Program.cs`).
+- `ApiSettings.ApiKey`: usada por el `ApiKeyMiddleware` actualmente deshabilitado.
 
 ## Notas
 
-Este proyecto es un template/base, no un servicio de producción. Hay piezas deshabilitadas intencionalmente o pendientes de decisión (auth, eventos de dominio, `ApiKeyMiddleware`) — ver la sección "Known inconsistencies" en [CLAUDE.md](./CLAUDE.md) antes de asumir su comportamiento.
+Este proyecto no es un servicio de producción ni debe considerarse un template vigente. Hay piezas deshabilitadas o inconsistentes intencionalmente (auth, eventos de dominio, `ApiKeyMiddleware` y configuración de conexión); consultar `CLAUDE.md` antes de reutilizar código.
